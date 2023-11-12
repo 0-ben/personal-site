@@ -23,7 +23,6 @@
     #title, #things {
         text-align: center;
         
-        width: 100%;
         height: min-content;
     }
 

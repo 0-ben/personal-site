@@ -13,7 +13,7 @@
         width: 80vw;
         min-width: 80vw;
 
-        height: calc(100vh - 20em);
+        // height: calc(100vh - 20em);
 
         margin: 10em auto;
         padding: 1em;

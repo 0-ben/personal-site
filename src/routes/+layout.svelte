@@ -4,7 +4,7 @@
 
 </script>
 
-<main>
+<main style="--height: auto;">
     <slot />
 </main>
 
@@ -13,7 +13,7 @@
         width: 80vw;
         min-width: 80vw;
 
-        // height: calc(100vh - 20em);
+        height: var(--height);
 
         margin: 10em auto;
         padding: 1em;

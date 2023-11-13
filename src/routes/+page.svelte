@@ -11,7 +11,11 @@
     <h4>Things I've made I want to share: </h4>
 
     <div id="things-container">
-        <Thing />
+        <Thing 
+            name="Clock"
+            desc="Basic clock that I made in ~30 minutes."
+            link="/clock"
+        />
         <Thing />
         <Thing />
         <Thing />

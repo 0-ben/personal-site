@@ -16,7 +16,11 @@
             desc="Basic clock that I made in ~30 minutes."
             link="/clock"
         />
-        <Thing />
+        <Thing 
+            name="Christmas Countdown"
+            desc="Basic countdown to the next Christmas"
+            link="/christmas_countdown"    
+        />
         <Thing />
         <Thing />
         <Thing />

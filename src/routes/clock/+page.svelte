@@ -35,7 +35,6 @@
 
 
 <style lang="scss">
-    // @import url('./css.css');
     :global(main) {
         margin: 1em auto !important;
         --height: calc(100vh - 4em) !important;

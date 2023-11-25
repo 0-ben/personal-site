@@ -22,6 +22,7 @@
 	"type": "module",
 	"dependencies": {
 		"@fontsource/ubuntu": "^5.0.8",
-		"@sveltejs/adapter-static": "^2.0.3"
+		"@sveltejs/adapter-static": "^2.0.3",
+		"@types/node": "^20.10.0"
 	}
 }

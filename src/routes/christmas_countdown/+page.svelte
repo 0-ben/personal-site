@@ -5,14 +5,18 @@
     const oneHourMS = 60 * 60 * 1000
     const oneMinMS = 60 * 1000
 
+    let remainingDays = '0';
+    let remainingHours = '0';
+    let remainingMins = '0';
+    let remainingSeconds = '0';
+
+    let chosenDay = 25
+
     onMount(() => {
-        const end = new Date((new Date()).getFullYear(), 11, 25)
-        const daysLeftElement = document.querySelector('#daysLeft .actualNumber') as HTMLElement
-        const hoursLeftElement = document.querySelector('#hoursLeft .actualNumber') as HTMLElement
-        const minsLeftElement = document.querySelector('#minsLeft .actualNumber') as HTMLElement
-        const secondsLeftElement = document.querySelector('#secondsLeft .actualNumber') as HTMLElement
         
         setInterval(() => {
+            const end = new Date((new Date()).getFullYear(), 11, chosenDay)
+            
             const now = new Date();
             const distance = Math.abs((now.valueOf() - end.valueOf()));
             
@@ -21,10 +25,10 @@
             var minutes = Math.floor((distance % oneHourMS) / oneMinMS);
             var seconds = Math.floor((distance % oneMinMS) / 1000);
             
-            daysLeftElement.innerText = days.toString()
-            hoursLeftElement.innerText = hours.toString()
-            minsLeftElement.innerText = minutes.toString()
-            secondsLeftElement.innerText = seconds.toString()
+            remainingDays = days.toString()
+            remainingHours = hours.toString()
+            remainingMins = minutes.toString()
+            remainingSeconds = seconds.toString()
         }, 1000)
     })
     
@@ -32,22 +36,23 @@
 </script>
     
 <h2 id="daysLeft" class="num">
-    <span class="actualNumber"></span>
+    <span class="actualNumber">{remainingDays}</span>
     <br/>days
 </h2>
 <h2 id="hoursLeft" class="num">
-    <span class="actualNumber"></span>
+    <span class="actualNumber">{remainingHours}</span>
     <br/>hours
 </h2>
 <h3 id="minsLeft" class="num">
-    <span class="actualNumber"></span>
+    <span class="actualNumber">{remainingMins}</span>
     <br/>minutes
 </h3>
 <h3 id="secondsLeft" class="num">
-    <span class="actualNumber"></span>
+    <span class="actualNumber">{remainingSeconds}</span>
     <br/>seconds
 </h3>
 
+<input class="dayInput" type="number" bind:value={chosenDay}/>
 
 <style lang="scss">
     @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
@@ -99,6 +104,24 @@
             color: #333;
             
             padding: 0.3em;
+        }
+    }
+
+    .dayInput {
+        position: absolute;
+        bottom: 1em;
+        left: 1em;
+        
+        height: 0.5em;
+        width: 1em;
+
+        -moz-appearance: textfield;
+        appearance: textfield;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
         }
     }
     

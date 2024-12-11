@@ -21,7 +21,11 @@
             desc="Basic countdown to the next Christmas"
             link="/christmas_countdown"    
         />
-        <Thing />
+        <Thing 
+            name="vsware.js"
+            desc="A TS/JS wrapper for the user-facing VSWare API."
+            link="https://github.com/0-ben/vsware.js"    
+        />
         <Thing />
         <Thing />
     </div>

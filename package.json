@@ -11,7 +11,7 @@
     "output-helper-scripts": "echo \"bun exec \\\"HOST=127.0.0.1 PORT=31033 ./server \\\"\" > build/bin/run.bat && echo \"bun exec \\\"HOST=127.0.0.1 PORT=31033 ./server \\\"\" > build/bin/run.sh",
     "__compile:linux": "bun run build && bun build ./build/index.js --compile --target=bun-linux-x64-baseline --outfile build/bin/server ./build/**/*",
     "__compile:native": "bun run build && bun build ./build/index.js --compile --outfile build/bin/server ./build",
-    "setup-scripts": "echo \"bun exec \\\"HOST=127.0.0.1 PORT=31033 bun run ./index.js\\\"\" > ./build/run.sh",
+    "setup-scripts": "echo \"#!/usr/bin/env bash\nbun exec \\\"HOST=127.0.0.1 PORT=31033 bun run ./index.js\\\"\" > ./build/run.sh",
     "package": "bun ./make-tar.sh",
     "compile": "bun run build && bun run setup-scripts && bun run package"
   },

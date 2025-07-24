@@ -19,15 +19,25 @@
         <Thing 
             name="Christmas Countdown"
             desc="Basic countdown to the next Christmas"
-            link="/christmas_countdown"    
+            link="/christmas_countdown"
         />
-        <Thing 
+        <!-- redacted due to suspicion causing blocks -->
+        <!-- <Thing 
             name="vsware.js"
             desc="A TS/JS wrapper for the user-facing VSWare API."
-            link="https://github.com/0-ben/vsware.js"    
+            link="https://github.com/0-ben/vsware.js"
+        /> -->
+        <Thing 
+            name="picopassword"    
+            desc="A basic CircuitPython program to enter a string on a button press."
+            link="https://github.com/0-ben/picopassword"
         />
         <Thing />
-        <Thing />
+        <Thing 
+            name="... and more!"
+            desc="View more projects on my Github"
+            link="https://github.com/0-ben?tab=repositories"
+        />
     </div>
 </div>
 

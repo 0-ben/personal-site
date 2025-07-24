@@ -6,7 +6,7 @@
 </script>
 
 <div id="notice">
-    <h4>If you believe any content of this website to be in violation of any rights you hold, please contact <Email address="admin@benb.my" /></h4>
+    <h4>If you believe any content of this website to be in violation of any rights you hold, please contact <Email address={`admin@${window.location.hostname}`} /></h4>
 </div>
 
 <main style="--height: auto;">

@@ -1,0 +1,1 @@
+tar -czvf ./release.tar.gz -C ./build . && cp ./release.tar.gz ./build/release.tar.gz && rm release.tar.gz

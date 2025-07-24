@@ -24,8 +24,11 @@
         h4 {
             margin: 0;
         }
+        clear: both;
     }
     main {
+        clear: both;
+        flex: 0 0 100%;
         width: 80vw;
         min-width: 80vw;
 

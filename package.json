@@ -1,28 +1,38 @@
 {
-	"name": "personal-site",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
-	},
-	"devDependencies": {
-		"@sveltejs/adapter-auto": "^2.0.0",
-		"@sveltejs/kit": "^1.20.4",
-		"sass": "^1.69.5",
-		"svelte": "^4.0.5",
-		"svelte-check": "^3.4.3",
-		"tslib": "^2.4.1",
-		"typescript": "^5.0.0",
-		"vite": "^4.4.2"
-	},
-	"type": "module",
-	"dependencies": {
-		"@fontsource/ubuntu": "^5.0.8",
-		"@sveltejs/adapter-static": "^2.0.3",
-		"@types/node": "^20.10.0"
-	}
+  "name": "personal-site",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "output-helper-scripts": "echo \"bun exec \\\"HOST=127.0.0.1 PORT=31033 ./server \\\"\" > build/bin/run.bat && echo \"bun exec \\\"HOST=127.0.0.1 PORT=31033 ./server \\\"\" > build/bin/run.sh",
+    "__compile:linux": "bun run build && bun build ./build/index.js --compile --target=bun-linux-x64-baseline --outfile build/bin/server ./build/**/*",
+    "__compile:native": "bun run build && bun build ./build/index.js --compile --outfile build/bin/server ./build",
+    "setup-scripts": "echo \"bun exec \\\"HOST=127.0.0.1 PORT=31033 bun run ./index.js\\\"\" > ./build/run.sh",
+    "package": "bun ./make-tar.sh",
+    "compile": "bun run build && bun run setup-scripts && bun run package"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "^2.0.0",
+    "@sveltejs/kit": "^1.20.4",
+    "sass": "^1.69.5",
+    "svelte": "^4.0.5",
+    "svelte-check": "^3.4.3",
+    "tslib": "^2.4.1",
+    "typescript": "^5.0.0",
+    "vite": "^4.4.2",
+    "@types/bun": "latest"
+  },
+  "type": "module",
+  "dependencies": {
+    "@fontsource/ubuntu": "^5.0.8",
+    "@sveltejs/adapter-node": "^5.2.13",
+    "@sveltejs/adapter-static": "^2.0.3",
+    "@types/node": "^20.10.0",
+    "cross-env": "^7.0.3",
+    "svelte-adapter-bun": "^0.5.2"
+  }
 }

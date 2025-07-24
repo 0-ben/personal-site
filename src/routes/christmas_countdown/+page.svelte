@@ -61,10 +61,9 @@
         display: flex;
         align-items: center;
         justify-items: center;
-
-        flex-direction: row;
+        flex-direction: column;
         
-        margin: 0;
+        margin: 8px;
         background-image: url("https://c4.wallpaperflare.com/wallpaper/483/164/960/cozy-christmas-tree-decorations-holiday-wallpaper-preview.jpg") !important;
         background-repeat: no-repeat !important;
         background-attachment: fixed !important;

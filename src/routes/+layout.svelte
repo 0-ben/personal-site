@@ -2,11 +2,16 @@
     import '@fontsource/ubuntu';
     import './main.scss'
     import Email from '$lib/components/Email.svelte';
+    import { onMount } from 'svelte';
 
+    let email = ''
+    onMount(() => {
+        email = `admin@${window.location.hostname}`
+    })
 </script>
 
 <div id="notice">
-    <h4>If you believe any content of this website to be in violation of any rights you hold, please contact <Email address={`admin@${window.location.hostname}`} /></h4>
+    <h4>If you believe any content of this website to be in violation of any rights you hold, please contact <Email address={email} /></h4>
 </div>
 
 <main style="--height: auto;">
